@@ -6,6 +6,9 @@ python ssh_executor.py <host> <username> "<command>"
 Replace `<host>` with your hostname or IP address, `<username>` with your SSH username and `<command>` with the actual command you want to execute.#
 
 I used `sys.argv` to get the arguments from the command line. This is a simple way to pass arguments to a Python script.
+
+pip install paramiko socket
+
 """
 
 
