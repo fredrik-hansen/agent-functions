@@ -21,17 +21,19 @@ prompt_price_per_1k = 0
 completion_token_price_per_1k = 0
 
 config_list = [{
-    "model": "llama3.1:70b",
-    "base_url": "http://ollama.dc.int:11434/v1",
+    "model": "nemotron:latest",
+    "base_url": "http://10.1.74.15:11434/v1",
     "api_key": "ollama",
     "price": [prompt_price_per_1k, completion_token_price_per_1k],
     "frequency_penalty": 0.5,
-    "max_tokens": 2048,
     "presence_penalty": 0.2,
     "temperature": 0.2,
     "top_p": 0.2,
+    "timeout": 7200,
+    "stream": True,
+    "max_tokens": 131072,
   }]
 
 assistant = AssistantAgent("assistant", llm_config={"config_list": config_list})
-user_proxy = UserProxyAgent("user_proxy", code_execution_config={"work_dir": "/tmp/trmcodegen/", "use_docker": False})
+user_proxy = UserProxyAgent("user_proxy", code_execution_config={"work_dir": "/home/pki/code/codegenerator/", "use_docker": False})
 user_proxy.initiate_chat(assistant, message=' '.join(argv[1:]))

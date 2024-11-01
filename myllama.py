@@ -18,7 +18,7 @@ async def chat():
     input = ' '.join(argv[1:])
     message = {'role': 'user', 'content': input}
     print(colorama.Fore.GREEN)
-    async for part in await AsyncClient(host='http://ollama.dc.int:11434').chat(model='llama3.1:70b', messages=[message], stream=True):
+    async for part in await AsyncClient(host='http://ollama.dc.int:11434/').chat(model='nemotron:latest' , messages=[message], stream=True ):
         print(part['message']['content'], end='', flush=True)
 asyncio.run(chat())
 print(colorama.Style.RESET_ALL)
