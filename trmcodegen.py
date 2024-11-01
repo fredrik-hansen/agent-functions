@@ -22,7 +22,7 @@ completion_token_price_per_1k = 0
 
 config_list = [{
     "model": "nemotron:latest",
-    "base_url": "http://10.1.74.15:11434/v1",
+    "base_url": "http://ollama.dc.int:11434/v1",
     "api_key": "ollama",
     "price": [prompt_price_per_1k, completion_token_price_per_1k],
     "frequency_penalty": 0.5,
