@@ -21,7 +21,7 @@ prompt_price_per_1k = 0
 completion_token_price_per_1k = 0
 
 config_list = [{
-    "model": "nemotron:latest",
+    "model": "phi4:latest",
     "base_url": "http://ollama.dc.int:11434/v1",
     "api_key": "ollama",
     "price": [prompt_price_per_1k, completion_token_price_per_1k],

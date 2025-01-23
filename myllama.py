@@ -16,9 +16,9 @@ from sys import argv
 
 async def chat():
     input = ' '.join(argv[1:])
-    message = {'role': 'user', 'content': input}
+    message = {'role': 'user', 'content': "Answer the following using max 160 characters: " + input}
     print(colorama.Fore.GREEN)
-    async for part in await AsyncClient(host='http://ollama.dc.int:11434/').chat(model='nemotron:latest' , messages=[message], stream=True ):
+    async for part in await AsyncClient(host='http://ollama.dc.int:11434/').chat(model='phi4:latest' , messages=[message], stream=True ):
         print(part['message']['content'], end='', flush=True)
 asyncio.run(chat())
 print(colorama.Style.RESET_ALL)
